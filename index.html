@@ -1,0 +1,1563 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
+  <title>
+   Suravia
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-white text-black min-h-screen flex flex-col">
+  <header class="border-b border-gray-200">
+   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center gap-3">
+    <div class="text-2xl text-gray-900">
+     <img src="Suravia_logo.png" alt="Suravia Logo" class="h-16 w-auto"/>
+    </div>
+    <div>
+     <h1 class="font-semibold text-lg leading-6">
+      Suravia
+     </h1>
+     <p class="text-gray-500 text-sm leading-5">
+      Discover your next adventure based on your interests
+     </p>
+    </div>
+   </div>
+  </header>
+  <main class="flex-grow max-w-7xl mx-auto px-6 py-10 w-full">
+   <!-- Step 1: Interests -->
+   <div class="max-w-5xl mx-auto relative" id="step1">
+    <nav aria-label="Progress" class="flex justify-center items-center space-x-6 mb-10 select-none">
+     <div class="flex items-center space-x-2">
+      <div class="flex items-center justify-center w-8 h-8 rounded-full bg-[#030417] text-white font-semibold text-sm">
+       1
+      </div>
+      <span class="text-sm leading-6">
+       Interests
+      </span>
+     </div>
+     <div class="flex items-center space-x-2 text-gray-400">
+      <span class="block w-12 h-[1px] bg-gray-300">
+      </span>
+      <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 text-gray-400 font-semibold text-sm">
+       2
+      </div>
+      <span class="text-sm leading-6">
+       Location
+      </span>
+     </div>
+     <div class="flex items-center space-x-2 text-gray-400">
+      <span class="block w-12 h-[1px] bg-gray-300">
+      </span>
+      <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 text-gray-400 font-semibold text-sm">
+       3
+      </div>
+      <span class="text-sm leading-6">
+       Results
+      </span>
+     </div>
+    </nav>
+    <button class="absolute top-0 right-0 mt-2 mr-2 text-sm text-[#030417] font-semibold hover:underline focus:outline-none hidden" id="startOverStep1">
+     Start Over
+    </button>
+    <form aria-label="What interests you?" class="border border-gray-200 rounded-xl p-8" id="interestsForm">
+     <h2 class="font-semibold text-lg mb-2">
+      What interests you?
+     </h2>
+     <p class="text-gray-500 mb-8">
+      Select all that apply to get personalized destination recommendations.
+     </p>
+     <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-16 max-w-4xl mx-auto">
+      <label class="flex items-center space-x-3 cursor-pointer select-none" for="adventure">
+       <input class="w-5 h-5 rounded border-gray-300 focus:ring-2 focus:ring-[#030417]" id="adventure" type="checkbox"/>
+       <img alt="Mountain emoji representing Adventure &amp; Outdoor Activities" aria-hidden="true" class="w-5 h-5" height="20" src="https://storage.googleapis.com/a1aa/image/5899f557-acd9-46b8-e625-3663c2718e41.jpg" width="20"/>
+       <span class="text-sm font-semibold">
+        Adventure &amp; Outdoor Activities
+       </span>
+      </label>
+      <label class="flex items-center space-x-3 cursor-pointer select-none" for="culture">
+       <input class="w-5 h-5 rounded border-gray-300 focus:ring-2 focus:ring-[#030417]" id="culture" type="checkbox"/>
+       <img alt="Classical building emoji representing Culture &amp; History" aria-hidden="true" class="w-5 h-5" height="20" src="https://storage.googleapis.com/a1aa/image/8b1d9f6c-b05d-4e1f-509f-de32f2cebc40.jpg" width="20"/>
+       <span class="text-sm font-semibold">
+        Culture &amp; History
+       </span>
+      </label>
+      <label class="flex items-center space-x-3 cursor-pointer select-none" for="food">
+       <input class="w-5 h-5 rounded border-gray-300 focus:ring-2 focus:ring-[#030417]" id="food" type="checkbox"/>
+       <img alt="Bowl of noodles emoji representing Food &amp; Culinary Experiences" aria-hidden="true" class="w-5 h-5" height="20" src="https://storage.googleapis.com/a1aa/image/3f60c35e-0930-4ebd-5197-46e1d23360be.jpg" width="20"/>
+       <span class="text-sm font-semibold">
+        Food &amp; Culinary Experiences
+       </span>
+      </label>
+      <label class="flex items-center space-x-3 cursor-pointer select-none" for="beaches">
+       <input class="w-5 h-5 rounded border-gray-300 focus:ring-2 focus:ring-[#030417]" id="beaches" type="checkbox"/>
+       <img alt="Beach with umbrella emoji representing Beaches &amp; Coastal Areas" aria-hidden="true" class="w-5 h-5" height="20" src="https://storage.googleapis.com/a1aa/image/dfcd897f-0c84-4348-1d70-2985e41a5bd2.jpg" width="20"/>
+       <span class="text-sm font-semibold">
+        Beaches &amp; Coastal Areas
+       </span>
+      </label>
+      <label class="flex items-center space-x-3 cursor-pointer select-none" for="nature">
+       <input class="w-5 h-5 rounded border-gray-300 focus:ring-2 focus:ring-[#030417]" id="nature" type="checkbox"/>
+       <img alt="Butterfly emoji representing Nature &amp; Wildlife" aria-hidden="true" class="w-5 h-5" height="20" src="https://storage.googleapis.com/a1aa/image/312a3db4-416b-4a20-85bb-2b50fd721fa4.jpg" width="20"/>
+       <span class="text-sm font-semibold">
+        Nature &amp; Wildlife
+       </span>
+      </label>
+      <label class="flex items-center space-x-3 cursor-pointer select-none" for="nightlife">
+       <input class="w-5 h-5 rounded border-gray-300 focus:ring-2 focus:ring-[#030417]" id="nightlife" type="checkbox"/>
+       <img alt="Theater masks emoji representing Nightlife &amp; Entertainment" aria-hidden="true" class="w-5 h-5" height="20" src="https://storage.googleapis.com/a1aa/image/af181456-2bc9-418b-a8a7-742d43bebda2.jpg" width="20"/>
+       <span class="text-sm font-semibold">
+        Nightlife &amp; Entertainment
+       </span>
+      </label>
+      <label class="flex items-center space-x-3 cursor-pointer select-none" for="relaxation">
+       <input class="w-5 h-5 rounded border-gray-300 focus:ring-2 focus:ring-[#030417]" id="relaxation" type="checkbox"/>
+       <img alt="Person meditating emoji representing Relaxation &amp; Wellness" aria-hidden="true" class="w-5 h-5" height="20" src="https://storage.googleapis.com/a1aa/image/03295268-0208-4b93-79d6-414c0885cb4b.jpg" width="20"/>
+       <span class="text-sm font-semibold">
+        Relaxation &amp; Wellness
+       </span>
+      </label>
+      <label class="flex items-center space-x-3 cursor-pointer select-none" for="photography">
+       <input class="w-5 h-5 rounded border-gray-300 focus:ring-2 focus:ring-[#030417]" id="photography" type="checkbox"/>
+       <img alt="Camera emoji representing Photography &amp; Scenic Views" aria-hidden="true" class="w-5 h-5" height="20" src="https://storage.googleapis.com/a1aa/image/b17cb24b-382b-43b7-479f-2b4ae0df69c6.jpg" width="20"/>
+       <span class="text-sm font-semibold">
+        Photography &amp; Scenic Views
+       </span>
+      </label>
+      <label class="flex items-center space-x-3 cursor-pointer select-none" for="shopping">
+       <input class="w-5 h-5 rounded border-gray-300 focus:ring-2 focus:ring-[#030417]" id="shopping" type="checkbox"/>
+       <img alt="Shopping cart emoji representing Shopping &amp; Markets" aria-hidden="true" class="w-5 h-5" height="20" src="https://storage.googleapis.com/a1aa/image/e8b66d25-a40e-442a-9e43-dea56d6bdd3d.jpg" width="20"/>
+       <span class="text-sm font-semibold">
+        Shopping &amp; Markets
+       </span>
+      </label>
+      <label class="flex items-center space-x-3 cursor-pointer select-none" for="architecture">
+       <input class="w-5 h-5 rounded border-gray-300 focus:ring-2 focus:ring-[#030417]" id="architecture" type="checkbox"/>
+       <img alt="Tokyo tower emoji representing Architecture &amp; Design" aria-hidden="true" class="w-5 h-5" height="20" src="https://storage.googleapis.com/a1aa/image/6811d606-55ac-45d0-06fc-5996989caa81.jpg" width="20"/>
+       <span class="text-sm font-semibold">
+        Architecture &amp; Design
+       </span>
+      </label>
+     </div>
+     <div class="mt-10 flex justify-center">
+      <button class="bg-[#030417] text-white font-semibold rounded-md px-6 py-3 hover:bg-[#05071a] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#030417]" id="toStep2" type="button">
+       Continue to Location
+      </button>
+     </div>
+     <p class="text-red-600 text-center mt-4 hidden" id="interestError">
+      Please select at least one interest to continue
+     </p>
+    </form>
+   </div>
+   <!-- Step 2: Location -->
+   <div class="max-w-7xl mx-auto px-6 py-10 hidden relative" id="step2">
+    <nav aria-label="Progress" class="flex justify-center items-center space-x-6 mb-10 select-none">
+     <div class="flex items-center space-x-2 text-gray-400">
+      <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 text-gray-400 font-semibold text-sm">
+       1
+      </div>
+      <span class="text-sm leading-6">
+       Interests
+      </span>
+     </div>
+     <div class="flex items-center space-x-2">
+      <span class="block w-12 h-[1px] bg-[#030417]">
+      </span>
+      <div class="flex items-center justify-center w-8 h-8 rounded-full bg-[#030417] text-white font-semibold text-sm">
+       2
+      </div>
+      <span class="text-sm leading-6 text-[#030417]">
+       Location
+      </span>
+     </div>
+     <div class="flex items-center space-x-2 text-gray-400">
+      <span class="block w-12 h-[1px] bg-gray-300">
+      </span>
+      <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 text-gray-400 font-semibold text-sm">
+       3
+      </div>
+      <span class="text-sm leading-6">
+       Results
+      </span>
+     </div>
+    </nav>
+    <button class="absolute top-0 right-0 mt-2 mr-2 text-sm text-[#030417] font-semibold hover:underline focus:outline-none" id="startOverStep2">
+     Start Over
+    </button>
+    <div class="text-center mb-6 text-sm font-normal">
+     Step 2: Choose Your Preferred Destinations
+    </div>
+    <div class="text-center mb-10">
+     <span class="inline-block bg-gray-200 rounded-full px-4 py-1 text-xs font-normal" id="selectedInterestsTag">
+      Food
+     </span>
+    </div>
+    <section class="border border-gray-200 rounded-xl p-10 max-w-4xl mx-auto mb-10">
+     <h2 class="font-semibold text-lg mb-6">
+      Select Country, State, City and Food Item
+     </h2>
+     <form class="space-y-6" id="locationForm">
+      <div>
+       <label class="block mb-1 font-semibold text-gray-900 text-sm" for="countrySelect">
+        Country
+       </label>
+       <select class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#030417]" id="countrySelect">
+        <option value="">
+         Select a country
+        </option>
+       </select>
+      </div>
+      <div>
+       <label class="block mb-1 font-semibold text-gray-900 text-sm" for="stateSelect">
+        State / Province
+       </label>
+       <select class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#030417]" disabled="" id="stateSelect">
+        <option value="">
+         Select a state
+        </option>
+       </select>
+      </div>
+      <div>
+       <label class="block mb-1 font-semibold text-gray-900 text-sm" for="citySelect">
+        City
+       </label>
+       <select class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#030417]" disabled="" id="citySelect">
+        <option value="">
+         Select a city
+        </option>
+       </select>
+      </div>
+      <div>
+       <label class="block mb-1 font-semibold text-gray-900 text-sm" for="foodItemSelect">
+        Food Item
+       </label>
+       <select class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#030417]" disabled="" id="foodItemSelect">
+        <option value="">
+         Select a food item
+        </option>
+       </select>
+      </div>
+      <div class="flex justify-end gap-4 mt-6">
+       <button class="bg-gray-200 text-gray-900 font-semibold text-sm rounded-md px-8 py-3 hover:bg-gray-300 focus:outline-none" id="backToStep1" type="button">
+        Back to Interests
+       </button>
+       <button class="bg-[#030417] text-white font-semibold text-sm rounded-md px-8 py-3 hover:bg-[#05071a] focus:outline-none" id="toStep3" type="button">
+        Generate My Bucket List
+       </button>
+      </div>
+     </form>
+    </section>
+   </div>
+   <!-- Step 3: Results -->
+   <div class="max-w-7xl mx-auto px-6 py-10 hidden relative" id="step3">
+    <nav aria-label="Progress" class="flex justify-center items-center space-x-6 mb-10 select-none">
+     <div class="flex items-center space-x-2 text-gray-400">
+      <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 text-gray-400 font-semibold text-sm">
+       1
+      </div>
+      <span class="text-sm leading-6">
+       Interests
+      </span>
+     </div>
+     <div class="flex items-center space-x-2 text-gray-400">
+      <span class="block w-12 h-[1px] bg-gray-300">
+      </span>
+      <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 text-gray-400 font-semibold text-sm">
+       2
+      </div>
+      <span class="text-sm leading-6">
+       Location
+      </span>
+     </div>
+     <div class="flex items-center space-x-2">
+      <span class="block w-12 h-[1px] bg-[#030417]">
+      </span>
+      <div class="flex items-center justify-center w-8 h-8 rounded-full bg-[#030417] text-white font-semibold text-sm">
+       3
+      </div>
+      <span class="text-sm leading-6 text-[#030417]">
+       Results
+      </span>
+     </div>
+    </nav>
+    <button class="absolute top-0 right-0 mt-2 mr-2 text-sm text-[#030417] font-semibold hover:underline focus:outline-none" id="startOverStep3">
+     Start Over
+    </button>
+    <div class="text-center mb-6 text-sm font-normal">
+     Step 3: Your Personalized Bucket List
+    </div>
+<section id="resultsMessage" class="max-w-7xl mx-auto px-6 py-4 text-center font-semibold text-[#030417] mb-6">
+  <!-- Message will appear here -->
+</section>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto" id="resultsContainer">
+  <!-- Dynamic result cards will be inserted here -->
+</section>
+
+    <div class="mt-12 flex justify-center gap-4">
+     <button class="bg-gray-200 text-gray-900 font-semibold text-sm rounded-md px-8 py-3 hover:bg-gray-300 focus:outline-none" id="backToStep2" type="button">
+      Back to Location
+     </button>
+     <button class="bg-gray-200 text-gray-900 font-semibold text-sm rounded-md px-8 py-3 hover:bg-gray-300 focus:outline-none" id="startOverStep3" type="button">
+      Start Over
+     </button>
+    </div>
+   </div>
+  </main>
+  <footer class="border-t border-gray-200 py-6">
+   <p class="text-center text-gray-500 text-sm">
+    Start planning your next adventure today! 🌍 ✈️
+   </p>
+  </footer>
+  <script>
+   // Elements
+   const resultsMessage = document.getElementById('resultsMessage');
+    const step1 = document.getElementById('step1');
+    const step2 = document.getElementById('step2');
+    const step3 = document.getElementById('step3');
+    const toStep2Btn = document.getElementById('toStep2');
+    const toStep3Btn = document.getElementById('toStep3');
+    const backToStep2Btn = document.getElementById('backToStep2');
+    const backToStep1Btn = document.getElementById('backToStep1');
+    const interestsForm = document.getElementById('interestsForm');
+    const interestError = document.getElementById('interestError');
+    const selectedInterestsTag = document.getElementById('selectedInterestsTag');
+    const startOverStep1Btn = document.getElementById('startOverStep1');
+    const startOverStep2Btn = document.getElementById('startOverStep2');
+    const startOverStep3Btn = document.getElementById('startOverStep3');
+    const resultsContainer = document.getElementById('resultsContainer');
+
+    // Location selects
+    const countrySelect = document.getElementById('countrySelect');
+    const stateSelect = document.getElementById('stateSelect');
+    const citySelect = document.getElementById('citySelect');
+    const foodItemSelect = document.getElementById('foodItemSelect');
+
+    // Data for different interests and locations
+    const travelData = {
+      "India": {
+        "Gujarat": {
+          "Surat": {
+            name: "Surat",
+            country: "India",
+            category: "Food",
+            image: "https://placehold.co/600x400/png?text=Surat+City+View",
+            whyLoveIt: [
+              "Vibrant textile industry and markets",
+              "Rich cultural heritage and festivals",
+              "Delicious local cuisine"
+            ],
+  foodItems: [
+              {
+                name: "Locho",
+                image: "https://storage.googleapis.com/a1aa/image/locho.jpg",
+                description: "Locho is a soft, spiced Gujarati street food made from steamed gram flour, topped with sev, onions, and butter.",
+                variants: [
+                { name: "Plain Locho", image: "https://janilochohouse.com/upload/productimg/181_BUTTER%20LOCHO.jpg", area: "Jay Jalaram Khaman House, Nani Chhipwad, Balaji Road" },
+                  { name: "Butter Locho", image: "https://www.cookingcarnival.com/wp-content/uploads/2020/06/Surti-locho-recipe-2.jpg", area: "Jay Jalaram Khaman House, Kailash Nagar Rd, Sagrampura" },
+                  { name: "Butter Locho", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhxq1WgWmIpfGfiK2EJTiWO5z5om_aJypYWw&s", area: "Shreeji Locho House,  City Light Town, Athwa" },
+                  { name: "Butter Locho", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWLdycBWETG00b2xLvbic9d2oNHLpnv1wpMQ&s", area: "JP Khaman House, Kailash Nagar, Sagrampura" },
+                  { name: "Butter Locho", image: "https://b.zmtcdn.com/data/dish_photos/d46/d9a469dd1bf4694d24b1e1ba18ab5d46.jpeg", area: "Jani - Locho & Khaman House, Navyug College Rd, Near Petrol Pump, Adajan" },
+                  { name: "Cheese Locho", image: "https://scontent.fstv5-1.fna.fbcdn.net/v/t1.6435-9/157443647_270804604631215_4727432140365781799_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=olUUyle4veQQ7kNvwFqcfrc&_nc_oc=Adk0JIV9fe2x-na34f8PN3-SS6t4Y7gJSPjQTaLZJOtJ8gAbgibFMzW0ur77ORgts-WiVhTjLsCXqqMFrKikA2GX&_nc_zt=23&_nc_ht=scontent.fstv5-1.fna&_nc_gid=icy4F1FTZ4Iblu-9uEYVsg&oh=00_AfbtNfdn9Ly-fCtKmbEctGnhGTM-6fkjl9BGy9VmB7R5Zg&oe=68E5DC7B", area: "Jay Jalaram Khaman House, Kailash Nagar Rd, Sagrampura" },
+                  { name: "Cheese Locho", image: "https://static.toiimg.com/photo/86250868.cms", area: "Gopal Locho, Mahidharpura, Haripura" }
+                ]
+              },
+              {
+                name: "Khaman",
+                image: "https://storage.googleapis.com/a1aa/image/khaman.jpg",
+                description: "Khaman is a fluffy, savory snack made from gram flour, often served with chutneys.",
+                variants: [
+                  { name: "Khaman", image: "https://www.awesomecuisine.com/wp-content/uploads/2008/08/Khaman.jpg", area: "Surat Khaman house,Subhash Chowk, Gopipura" },
+                  { name: "Khaman", image: "https://as1.ftcdn.net/v2/jpg/04/04/53/08/1000_F_404530823_HWPzk2MWIHpHqvDYN8d1MnTwfppmIFWP.jpg", area: "Jalaram Khaman House, Honey Park Area, L.P.Savani" },
+                  { name: "Khaman", image: "https://as2.ftcdn.net/v2/jpg/00/99/72/55/1000_F_99725552_1rFD9ex7BGN8MHXyWOtIsMjYOrCNW31O.jpg", area: "J.J. Khaman House, Udhana Darwaja Char Rasta, opp. Morcha Mazid, Udhana Darwaja" },
+                  { name: "Rasa Khaman", image: "https://as2.ftcdn.net/v2/jpg/02/25/41/79/1000_F_225417901_9kkCEYGXZWFIZxxtgZNkdpZprnWv9z29.jpg", area: "Jalaram Rasawala Khaman,  Chowkbazar,Surat., nr. Jai Shankar Lassi" }
+                ]
+              },
+               {
+                name: "Sev-Khamani",
+                image: "https://storage.googleapis.com/a1aa/image/khaman.jpg",
+                description: "Khaman is a fluffy, savory snack made from gram flour, often served with chutneys.",
+                variants: [
+                  { name: "Sev-Khamani", image: "https://www.archanaskitchen.com/_next/image?url=https%3A%2F%2Fimages.archanaskitchen.com%2Fimages%2Frecipes%2Findian%2Findian-breakfast-tiffin-recipes%2Fupma-recipes%2Fsev_khamani_recipe_video_Amiri_Khaman_1_29bc21e117.jpg&w=1920&q=90", area: "Madhi Ni Khamni, Anand Mahal Rd, opp. Prime Arcade, Adajan" },
+                  { name: "Sev-Khamani", image: "https://i0.wp.com/myvegetarianroots.com/wp-content/uploads/2024/10/DSC_0006.jpg?resize=683%2C1024&ssl=1", area: "Surat Khaman House,Subhash Chowk, Gopipura" }
+                ]
+              },
+
+                {
+                name: "Surti Undhiyu",
+                image: "https://storage.googleapis.com/a1aa/image/khaman.jpg",
+                description: "Khaman is a fluffy, savory snack made from gram flour, often served with chutneys.",
+                variants: [
+                  { name: "Undhiyu", image: "https://images.squarespace-cdn.com/content/v1/578753d7d482e9c3a909de40/1579156575782-L0AJ3T3RB6IDMMKPKSEP/1801_Indian_Undhiyu-015.jpg?format=2500w", area: "G.dada Farsan & Surti Rasoi,  Sneh Sankul Wadi, Green Atria, Anand Mahal Rd, Opp, Adajan" }
+                ]
+              },
+
+                {
+                name: "Surti Ponk & Ponk Vada",
+                image: "https://storage.googleapis.com/a1aa/image/khaman.jpg",
+                description: "Khaman is a fluffy, savory snack made from gram flour, often served with chutneys.",
+                variants: [
+                  { name: "Ponk Vada", image: "https://i0.wp.com/pistachiodoughnut.com/wp-content/uploads/2023/01/IMG_3705_jpg.jpg?resize=800%2C840&ssl=1", area: "Dattatrey Ponk Vada & Green Ponk, Ghod Dod Rd, Maktampur, Athwa" },
+                   { name: "Ponk Vada & Ponk", image: "https://i.ytimg.com/vi/K91Uj6TSf24/maxresdefault.jpgttps://storage.googleapis.com/a1aa/image/khaman.jpg", area: "Sainath Ponk Vada Stall, Sneh Smruti Society, Sugam Society, Adajan Patiya" },
+                    { name: "Ponk Vada & Ponk", image: "https://thewhiskaddict.com/wp-content/uploads/2023/03/IMG_1535.jpg", area: "Ponk Nagri, Bapu Nagar, Adajan Patiya" }
+                ]
+              },
+
+                {
+                name: "Surti Ghari",
+                image: "https://storage.googleapis.com/a1aa/image/khaman.jpg",
+                description: "Khaman is a fluffy, savory snack made from gram flour, often served with chutneys.",
+                variants: [
+                  { name: "Surti Ghari (Kesae, DryFruits)", image: "https://www.vijaydairy.com/wp-content/uploads/2023/04/1.jpg", area: "Shah Jamnadas C. Ghariwala, Anand Mahal Rd, opp. Mahalaxmi Mataji Temple, Chatrapati Shivaji Nagar, Adajan Gam, Adajan" }
+                ]
+              },
+
+               {
+                name: "Nankhati",
+                image: "https://storage.googleapis.com/a1aa/image/khaman.jpg",
+                description: "Khaman is a fluffy, savory snack made from gram flour, often served with chutneys.",
+                variants: [
+                  { name: "Nankhatai", image: "https://cdn2.foodviva.com/static-content/food-images/diwali-recipes/nan-khatai/nan-khatai.jpg", area: "Dotivala Bakers & Confectioners, Makkai Bridge Rd, Nanpura" },
+                  { name: "Nankhatai", image: "https://store.atulbakery.com/cdn/shop/files/Farmas-400-gm-2.jpg?v=1738752831&width=990", area: "Mazda Bakery, Chowk Bazar Rd, Chauta Pul, Shahpore" },
+                  { name: "Nankhatai", image: "https://www.theroute2roots.com/wp-content/uploads/2019/06/Nankhatai-1-of-1.jpg", area: "The New India Bakery-Sakerlal Devchand & Co, Bhaga Talav Main Rd, Opp.Jumma Masjid, Chowk Bazar" }  
+                ]
+              },
+
+              
+               {
+                name: "Surti Khaja",
+                image: "https://storage.googleapis.com/a1aa/image/khaman.jpg",
+                description: "Khaman is a fluffy, savory snack made from gram flour, often served with chutneys.",
+                variants: [
+                  { name: "Khaja", image: "https://5.imimg.com/data5/SELLER/Default/2022/10/VO/HD/BV/79886949/img-20220415-wa0160-1000x1000.jpg", area: "S Motiram sweets & Surati Sarasiya Khaja Mart, Khandwala Street, opp. Ambaji Road, near Bhagal, Gopipura" },
+                  { name: "Khaja", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqGvt-LFwg1NPHv-nT5o3_BKnLlA4y4c6qgw&s", area: "Joshi Farsan Mart, Bhagal Char Rasta, Bhagal" }
+                ]
+              },
+
+               {
+                name: "Fafda-jalebi",
+                image: "https://storage.googleapis.com/a1aa/image/khaman.jpg",
+                description: "Khaman is a fluffy, savory snack made from gram flour, often served with chutneys.",
+                variants: [
+                  { name: "Fafda", image: "https://b.zmtcdn.com/data/pictures/0/19363740/ae63c47c83169f498a5d8037c8506dd5.jpg", area: "Gandakaka na Fafda, Limbusheri, Khansaheb No Delo, Haripura" },
+                  { name: "Fafda-jalebi", image: "https://www.gujaratheadline.com/wp-content/uploads/2019/10/fafda-jalebi-to-cost-very-high.png", area: "Gurukrupa Gathiya Fafda Jalebi, Sitanagar Flyover, Sitanagar, Punagam, Varachha" },
+                  { name: "Fafda-jalebi", image: "https://content.jdmagicbox.com/comp/def_content_category/fafda-wholesalers/360-f-718413118-gwetmznkdkbqorpc5wov0r8obqf4uclt-fafda-wholesalers-5-4lcys-250.jpg", area: "Shree Mahavir Fafda And Jalebi House, Somnath Mahadev Road, Parle Point Cir, Umra Gam, Athwa"}
+                ]
+              },
+
+               {
+                name: "Dabeli",
+                image: "https://storage.googleapis.com/a1aa/image/khaman.jpg",
+                description: "Khaman is a fluffy, savory snack made from gram flour, often served with chutneys.",
+                variants: [
+                  { name: "Dabeli", image: "https://b.zmtcdn.com/data/pictures/3/19856493/927a7ef45807717fb7e947f073febb48.jpg", area: "Bhai Bhai Dabeliwala, Parle Point, Somanath Society, Umra Gam, Athwa" },
+                  { name: "Dabeli", image: "https://media-assets.swiggy.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/f5f5eipptmkmdcra1eq2", area: "Dilip Dabeli, Aagam Emporio, LP Savani Cir, opposite Toyota Showroom, Adajan Gam, Adajan" }
+                ]
+              },
+
+               {
+                name: "Falooda",
+                image: "https://storage.googleapis.com/a1aa/image/khaman.jpg",
+                description: "Khaman is a fluffy, savory snack made from gram flour, often served with chutneys.",
+                variants: [
+                  { name: "Sp. Falooda", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsq5WCqH9prjVN6eBHJBJQlkV7te25SkMHcQ&s", area: "Hanumante Icecream Faluda, Khaudhara Gali, near Subham Point d, Ruwala Tekra, Bhagal" }
+                ]
+              },
+
+               {
+                name: "Pav Bhaji",
+                image: "https://storage.googleapis.com/a1aa/image/khaman.jpg",
+                description: "Khaman is a fluffy, savory snack made from gram flour, often served with chutneys.",
+                variants: [
+                  { name: "Butter Pav Bhaji", image: "https://i.ytimg.com/vi/CitJDGnpDDM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDH0EEssZ4Pa4t7YnZmyqdIJuf08w", area: "Mahesh Pav Bhaji,  SMC Picnic Stall, Chowpati, Athwa Lines" },
+                  { name: "Butter Pav Bhaji", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfxrcdz1CvJlUCzN10Zl1DpMcReubv57ujLw&s", area: "RAMESH PAVBHAJI CORNER, Chowk Bazar, Bagal Kotasfeel" },
+                  { name: "Cheese Pav Bhaji", image: "https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_960,w_960//InstamartAssets/Receipes/cheese_pav_bhaji.webp", area: "R.D. Sharma Pav Bhaji and Dosa,Marvella Corridor, ViP Road, Bahrtna, Vesu" },
+                  { name: "Butter Pav Bhaji", image: "https://madhurasrecipe.com/wp-content/uploads/2022/01/cooker_pav_bhaji_3.jpg", area: "Kaki ni Pavbhaji, R K Desai Marg, Ram Nagar, Adarsh Society, Athwa" },
+                ]
+              },
+
+                {
+                name: "Burgers",
+                image: "https://storage.googleapis.com/a1aa/image/khaman.jpg",
+                description: "Khaman is a fluffy, savory snack made from gram flour, often served with chutneys.",
+                variants: [
+                  { name: "Peri Peri Cheese Burger", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm5rhBjk7N-QdJu6KFytIl8ow_ZOH9e0-6Vg&s", area: "Ajay's - DR World, Surat, Corner Point, opp. Sejal Appt, City Light Town, Athwa, Surat" }
+                ]
+              },
+
+               {
+                name: "Frankie/Rolls",
+                image: "https://storage.googleapis.com/a1aa/image/khaman.jpg",
+                description: "Khaman is a fluffy, savory snack made from gram flour, often served with chutneys.",
+                variants: [
+                  { name: "Veg. Cheese Solid Masti Frankie", image: "https://content.jdmagicbox.com/comp/surat/n9/0261px261.x261.180828154354.x7n9/catalogue/famous-frankie-vesu-surat-fast-food-54jgc3khop.jpg", area: "Agrawal Brothers Frankie, Bhagwan Mahavir college Nr.Mahavir Food Court, Bharthana Road, Bharthana, Surat" },
+                  { name: "Veg. Cheese Schezwan Frankie", image: "https://media-assets.swiggy.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/gsab9fnds3qkrvd0kmmg", area: "tipsy & topsy, center point, nanpura" }
+                ]
+              },
+              {
+                name: "COCO",
+                image: "https://storage.googleapis.com/a1aa/image/pav-bhaji.jpg",
+                description: "A spicy vegetable mash served with buttered bread rolls.",
+                variants: [
+                  { name: "Coco", image: "https://media-assets.swiggy.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/zltghxczzo3aby8zpvjs", area: "A One Cold Coco, NR.SILK HOUSE MARKET, 10/2436, Chowk Bazar Rd, Chowk Bazar" }
+                ]
+              }
+            ],
+culturalSites: [
+                {
+                    name: "Dutch Garden",
+                    image: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrPX0l7mw-XC5Wnj5tnombB0M_vr_D4VIq9LyUru6OSMOcV00pWG8AqbEiCbGcq2F7ZcPq4UntljMxFiMkMqWRAa9U3Ov8z2CX-36ivT-ej_XHZNbaAoWP93s_Z7k7xXSCAB7hC=w243-h203-n-k-no-nu",
+                    description: "A beautiful garden featuring historic Dutch and English cemeteries, reflecting Surat’s colonial past.",
+                    location: "Surat"
+                },
+                {
+                    name: "Mughal Sarai (Mugalisara)",
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5hjSaPkE5F0lpOXR9sWQj2XrsOvYzMUMnwQ&s",
+                    description: "A 17th-century Mughal-era caravanserai that later served as a British jail, showcasing Indo-Islamic architecture.",
+                    location: "Surat"
+                },
+                {
+                    name: "Sardar Patel Museum",
+                    image: "https://avathioutdoors.gumlet.io/travelGuide/dev/surat_P9108.jpg",
+                    description: "A historic museum featuring exhibits on art, science, history, and a planetarium; originally built during British rule.",
+                    location: "Surat"
+                },
+                {
+                    name: "Chintamani Jain Temple",
+                    image: "https://www.gujaratexpert.com/blog/wp-content/uploads/2023/11/Chintamani-Jain-Temple-Surat.jpg",
+                    description: "An ancient Jain temple known for its intricate wooden carvings and mural paintings made with natural dyes.",
+                    location: "Surat"
+                },
+                {
+                    name: "Gopi Talav",
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWtHa7Zpu0P8YSFxMiTqAFbMUMxZEarsOlgA&s",
+                    description: "A restored 16th-century lake built by Malik Gopi, now a cultural and recreational center with amphitheater and fountain shows.",
+                    location: "Surat"
+                },
+                {
+                    name: "English Cemetery",
+                    image: "https://www.gujarattourism.com/content/dam/gujrattourism/images/heritage-sites/english-cemetery/English-Cemetery-1.jpg",
+                    description: "Contains elaborate tombs of British officials from the East India Company era, including Sir George Oxenden.",
+                    location: "Surat"
+                },
+                {
+                    name: "Armenian Cemetery",
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0CjQkxZkWIMZFNEePCqUfqS1wr1RDDolBBg&s",
+                    description: "A lesser-known site showcasing Armenian tombs that highlight Surat’s diverse trading community in the 17th century.",
+                    location: "Surat"
+                },
+                {
+                    name: "Rang Upvan Amphitheater",
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJSjonBtyTKjERWrQacE3hzDO30SLbnrFj-w&s",
+                    description: "An open-air theater that hosts cultural events, folk music, and theatrical performances celebrating local traditions.",
+                    location: "Surat"
+                },
+
+                {
+                name: "Sarthana Nature Park",
+                image: "https://media-cdn.tripadvisor.com/media/photo-s/11/2e/69/58/more-greenery-at-the.jpg",
+                description: "A large zoo and botanical garden with diverse flora and fauna.",
+                location: "Surat"
+                },
+            {
+                name: "Surat Castle (Surat Fort)",
+                image: "https://www.suratmunicipal.gov.in/Images/TheCity/SuratFort/02_big.jpg",
+                description: "Built in the 16th century by Sultan Mahmud III to protect the city from Portuguese pirates, the fort is a symbol of Surat’s resilience and military past.",
+                location: "Surat"
+            },
+            {
+                name: "Heritage Bridge (Hope Bridge)",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlbfuJPQunU7_zvHo9N4uk8uh1X5Z0QnYVVQ&s",
+                description: "Built by the British in 1877, this historic iron bridge over the Tapi River is a reminder of Surat's colonial infrastructure development.",
+                location: "Surat"
+            },
+            {
+                name: "Ambika Niketan Temple",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXHBGpDvN8tTiHNQ8OkDahAlVHfdbAXLBiWw&s",
+                description: "Though primarily a religious site, the temple is part of Surat’s cultural fabric, attracting thousands during Navratri and other Hindu festivals.",
+                location: "Surat"
+            },
+            {
+                name: "Andrew's Library",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6sn3FJjX7pUiyv-YC7NcXbJi2bfcxxrCB5g&s",
+                description: "Established in 1850, this historic public library is one of the oldest in Gujarat, housing rare manuscripts and historical documents.",
+                location: "Surat"
+            }
+            ],
+adventure: [
+                {
+                name: "Dumas Beach",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrQmX6DSAIz-DrkV1IREjRsbqtkz6lW1jh1A&s",
+                description: "Enjoy beach activities and scenic sunset views.",
+                location: "Surat"
+                },
+                {
+                name: "Saputara Trekking",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjm5qd0O28f5TDQdOS7wK4vhICsr2VohIxaQ&s",
+                description: "Trekking and nature trails in the nearby Saputara hills.",
+                location: "Near Surat"
+                },
+                {
+                    name: "Kayaking at Tapti Riverfront",
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSte9JkEYcG85oEgNJkEVh1xt3WztcqPmWgXw&s",
+                    description: "Glide along the Tapti River with kayaking, canoeing, or paddleboarding—great for all levels.",
+                    location: "Surat, Tapti Riverfront"
+                },
+                {
+                    name: "Jet Skiing at Dumas Beach",
+                    image: "https://d26dp53kz39178.cloudfront.net/media/uploads/products/jet-ski-6_BB7EBmj.jpg",
+                    description: "Thrill on water with jet-ski sessions available seasonally on Dumas Beach.",
+                    location: "Surat, Dumas Beach"
+                },
+                {
+                    name: "Paramotoring Over Tapti",
+                    image: "https://content.jdmagicbox.com/v2/comp/jaipur/r7/0141px141.x141.241210103829.p3r7/catalogue/bamboo-copter-ride-kookas-jaipur-paramotoring-services-bmc5w1338q.jpg",
+                    description: "Soar over Surat for panoramic aerial views with certified paramotoring experiences.",
+                    location: "Surat, Tapti Riverfront"
+                },
+                {
+                    name: "Rock Climbing at Pandesara Wall",
+                    image: "https://content.jdmagicbox.com/comp/def_content_category/indoor-rock-climbing-clubs/5-indoor-rock-climbing-clubs-5-btknd.jpg",
+                    description: "Scale indoor and outdoor walls in Surat’s growing climbing community, suitable for all ages.",
+                    location: "Surat, Pandesara"
+                },
+                {
+                    name: "Amaazia Water Park",
+                    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/42/8d/70/aquamagica-water-park.jpg?w=900&h=500&s=1",
+                    description: "Splash through Amazon-themed rides, wave pools, lazy rivers & more—fun for the whole family.",
+                    location: "Surat"
+                },
+                {
+                    name: "Chab Chaba Chab Water Park",
+                    image: "https://waterfunpark.com/assets/images/home-gallery/home-gallery01.jpg",
+                    description: "India’s largest water fun park near Surat, with 50+ water slides, lazy rivers & entertainment zones.",
+                    location: "Surat outskirts"
+                },
+                {
+                    name: "Sarthana Nature Park & Zoo",
+                    image: "https://www.suratmunicipal.gov.in/Images/Services/NaturePark/Slider/Slider3.jpg",
+                    description: "A vast zoo and nature park home to big cats, otters, boating, and serene trails.",
+                    location: "Surat"
+                }
+                ],
+beaches:[
+                {
+                    name: "Dumas Beach",
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVMae-LBJLuN9La4FRiVYLNRxdkdqlVkYfgg&s",
+                    description: "A black‑sand coastal area about 21 km from Surat, famed for its eerie folklore, sunset views, and street food stalls.",
+                    location: "Surat"
+                },
+                {
+                    name: "Suvali Beach",
+                    image: "https://res.cloudinary.com/dyiffrkzh/image/upload/c_fill,f_auto,fl_progressive.strip_profile,g_center,h_400,q_auto,w_700/v1690191837/bbj/cifuv0w6q8y1zdgxeupd.jpg",
+                    description: "Historic Swally Beach — site of the Battle of Swally and birthplace of India's modern navy; tranquil shores ideal for sunrises and water sports.",
+                    location: "Surat"
+                },
+                {
+                    name: "Ubharat Beach",
+                    image: "https://hblimg.mmtcdn.com/content/hubble/img/surat/mmt/activities/m_activities_surat_ubharat_umbharat_beach_l_360_640.jpg",
+                    description: "A quiet black‑sand beach near Navsari (~50 km from Surat) offering peaceful views, dolphin spotting, and kayaking.",
+                    location: "Surat"
+                },
+                {
+                    name: "Dandi Beach",
+                    image: "https://www.hoteldekho.com/storage/img/tourattraction/1650863712dandi%20beach.jpg",
+                    description: "The historic site where Gandhi’s Salt March culminated; features commemorative monuments and a serene shoreline.",
+                    location: "Surat"
+                }
+                ],
+nature:[
+                {
+                    name: "Sarthana Nature Park",
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbMgzQdbkr-jP7AIcP-ixasMG4yjLuBcfjUg&s",
+                    description: "Surat’s largest zoo‑cum‑park (81 acres), featuring white tigers, otter breeding, butterfly garden, boating, nature trails & educational programs.",
+                    location: "Surat"
+                },
+                {
+                    name: "Janki Van",
+                    image: "https://darpan.blog/wp-content/uploads/2015/09/Janki-Van-Bhinar-Unai-Gujarat-Tree-Forest-Garden-In-Surat-Navsari-Based-On-Ramayana-25.jpg",
+                    description: "A forest botanical garden with tribal huts, Ayurveda & yoga interpretation center on the Vansda–Vyara road.",
+                    location: "Near Surat"
+                },
+                {
+                    name: "Jagdish Chandra Bose Aquarium",
+                    image: "https://surattourism.in/images/places-to-visit/header/jagdish-chandra-bose-aquarium-surat-tourism-entry-fee-timings-holidays-reviews-header.jpg",
+                    description: "India’s first multi‑ecosystem underwater aquarium in Surat, home to over 100 fish species including shark and jellyfish tanks.",
+                    location: "Surat"
+                }
+                ],
+nightlife:[
+                {
+                    name: "Neon The Disc",
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpKLaqgIRzS5CDjnhli3B-VSn35aCzVddCIw&s",
+                    description: "Surat’s largest neon‑themed disco on Dumas Road with DJ nights, food, and a festive crowd.",
+                    location: "Surat"
+                },
+                {
+                    name: "Club Marina",
+                    image: "https://content.jdmagicbox.com/comp/navsari/s9/9999p2637.2637.190930022340.d7s9/catalogue/casa-marina-umbharat-navsari-resorts-1wszvwzeda-250.jpg",
+                    description: "Trendy lounge in Vesu known for hip‑hop & Bollywood theme nights and exotic mocktails.",
+                    location: "Surat"
+                },
+                {
+                    name: "Dhua’s Hookah Lounge",
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrkNLEulcTPEWCA90l7b1s8pePS9htnzR9ng&s",
+                    description: "Cozy hookah bar with food, sports broadcasts, celebrity décor, and a casual vibe.",
+                    location: "Surat"
+                },
+                {
+                    name: "Tapi Riverfront",
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDtFNCT9RzA7bcccTCs9mrDThSbjRSQYW1yA&s",
+                    description: "Well-lit riverside promenade in Adajan Patia—perfect for night walks with food stalls.",
+                    location: "Surat"
+                },
+                {
+                    name: "VR Mall (Dumas Road)",
+                    image: "https://cdn.hisurat.com/exploreplaces/vr-mall/DC_03640-1732535621420.webp",
+                    description: "Late‑night shopping, dining, cinemas, and events—open until 11 PM.",
+                    location: "Surat"
+                },
+                {
+                    name: "Piplod Night Bazaar",
+                    image: "https://curlytales.com/wp-content/uploads/2022/06/Untitled-design-11-3.jpg",
+                    description: "A lively night market in Piplod—street food vendors, night cafes, local snacks past midnight.",
+                    location: "Surat"
+                },
+                {
+                    name: "Vesu Canal Walkway Jam Sessions",
+                    image: "https://cdn.hisurat.com/exploreplaces/walkway/DSC00397-1741854911604.webp",
+                    description: "Local weekend music jam sessions held on the Vesu canal walkway—spontaneous and creative.",
+                    location: "Surat"
+                }
+                ],
+
+relaxation: [
+    {
+      name: "Sequence Traditional Spa For Wellness",
+      image: "https://content3.jdmagicbox.com/comp/surat/n7/0261px261.x261.201028173517.w7n7/catalogue/sequence-traditional-spa-udhna-darwaza-char-rasta-ring-road-surat-ayurvedic-body-massage-centres-ivy9mn664b.jpg",
+      description: "Udhana‑Darwaja spa offering Thai, Swedish, deep tissue massages and body wraps—open till 10 PM.",
+      location: "Surat"
+    },
+    {
+      name: "Luxe Spa & Wellness",
+      image: "https://images.jdmagicbox.com/v2/comp/nainital/g1/9999p5942.5942.240812141502.y1g1/catalogue/luxe-spa-and-wellness-nainital-road-nainital-body-massage-centres-xbnluxyyrm.jpg",
+      description: "Clean, serene spa in Parvat Patia with lymphatic drainage, herbal and signature massages.",
+      location: "Surat"
+    },
+    {
+      name: "Apsara Wellness Luxury Spa",
+      image: "https://content3.jdmagicbox.com/comp/surat/h2/0261px261.x261.180519172807.y2h2/catalogue/revive-s-p-a-puna-patiya-surat-body-massage-centres-db1g5.jpg",
+      description: "Premium spa in central Surat offering Ayurvedic, Thai, Swedish, and aroma therapies in a tranquil setting.",
+      location: "Surat"
+    },
+    {
+      name: "Sarenity Health & Wellness",
+      image: "https://content3.jdmagicbox.com/v2/comp/surat/n4/0261px261.x261.150507155925.y3n4/catalogue/sarenity-health-and-wellness-ghoddod-road-surat-ayurvedic-body-massage-centres-dofkdlwig1.jpg",
+      description: "Well‑rated aroma and Ayurvedic massage centre on Ghoddod Road—known for its relaxing treatments.",
+      location: "Surat"
+    },
+    {
+      name: "The Ocean Wellness",
+      image: "https://content3.jdmagicbox.com/v2/comp/surat/w8/0261px261.x261.240615162419.a1w8/catalogue/the-ocean-wellness-pal-gam-surat-body-massage-centres-v1u2qy2os3.jpg",
+      description: "Offers Balinese and aromatherapy massage packages in a calm, premium environment.",
+      location: "Surat"
+    }
+  ],
+photography: [
+                {
+                name: "Tapi Riverfront",
+                image: "https://earth5r.org/wp-content/uploads/2025/05/Earth5R-Mumbai-ESG-CSR-solutions-for-Tapi-river-sustainability.jpg",
+                description: "Riverside promenade ideal for evening strolls and sunset photography.",
+                location: "Surat"
+                },
+                {
+                name: "Saraswati Mandir (Narmad House)",
+                image: "https://i0.wp.com/way2heart.wordpress.com/wp-content/uploads/2019/03/img_20190224_094653.jpg?fit=1200%2C900&ssl=1",
+                description: "Historic poet Narmad’s 1866 home, now a museum—rich with literary charm and vintage architecture.",
+                location: "Surat"
+                },
+                {
+                name: "Gopi Talav",
+                image: "https://content3.jdmagicbox.com/comp/surat/s5/0261px261.x261.171230041534.r9s5/catalogue/gopi-talav-navsari-bazaar-surat-ocia03flvx.jpg",
+                description: "Historic lake with landscaped zones, amphitheater and fountains—photogenic and tranquil.",
+                location: "Surat"
+                },
+                {
+                name: "Dutch Garden",
+                image: "https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/20/3f3ff387eb237a86a16dd3fba07c528d_1000x1000.jpg",
+                description: "Colonial‑style garden with mausoleums and greenery, perfect for serene photography.",
+                location: "Surat"
+                },
+                {
+                name: "Science Centre, Surat",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzcydC5TsJn6h6x444RhpsPcfQ8_5DYQOxdg&s",
+                description: "Contemporary architectural venue with galleries, planetarium, and amphitheater—great for modern urban photography.",
+                location: "Surat"
+                },
+                {
+                name: "Surat Diamond Bourse",
+                image: "https://img.etimg.com/thumb/msid-106058444,width-640,height-480,imgsize-1150463,resizemode-4/global-marvel.jpg",
+                description: "World’s largest office building—modern design with expansive atriums and futuristic architecture.",
+                location: "Surat"
+                }
+            ],
+shopping: [
+                {
+                name: "Chauta Bazaar",
+                image: "https://content3.jdmagicbox.com/comp/surat/j5/0261px261.x261.220127225812.z9j5/catalogue/chauta-baazar-bhagal-surat-5ejtqztw6s.jpg",
+                description: "Oldest market in Surat offering traditional goods like textiles, utensils, cosmetics and clothes.",
+                location: "Surat"
+                },
+                {
+                name: "Bhagal Market",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4KqwZFgbAeqqzhBeZ-UIPvi83ZGS_oc5YbQ&s",
+                description: "Prestigious market for gold, silver and diamond jewelry, both traditional and contemporary.",
+                location: "Surat"
+                },
+                {
+            name: "Rander Market",
+            image: "https://content3.jdmagicbox.com/comp/surat/y8/0261px261.x261.221229232514.v5y8/catalogue/rander-ramzan-bazar-rander-surat-OmJ215rjvW.jpg",
+            description: "A bustling market area with an authentic local vibe, offering everything from street food to electronics and fabrics.",
+            location: "Surat"
+            },
+            {
+            name: "Surat Textile Market",
+            image: "https://images.indianexpress.com/2024/07/IMG-20240705-WA0049.jpg",
+            description: "Surat’s famous textile hub, offering a dazzling range of silk, cotton, and synthetic fabrics at wholesale prices.",
+            location: "Surat"
+            }
+            ],
+architecture: [
+    {
+      name: "Surat Castle",
+      image: "https://www.suratmunicipal.gov.in/Images/TheCity/SuratFort/03_big.jpg",
+      description: "A 16th‑century fortress with thick walls and round towers—iconic for its historical architecture.",
+      location: "Surat"
+    },
+    {
+      name: "Morarji Desai Setu",
+      image: "https://cdn.hisurat.com/exploreplaces/causeway/DSC01025%20copy-1749535590447.webp",
+      description: "Weir‑cum‑causeway bridge across the Tapi—functional architecture with visual presence.",
+      location: "Surat"
+    },
+    {
+      name: "Gopi Talav Design Zones",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHDiw_eh__05-BK1yJUp-mjIt_e4pJ6x_54w&s",
+      description: "Heritage lake redesigned with modern zones, fountains and amphitheater—blending tradition with design.",
+      location: "Surat"
+    }
+  ]
+  }       
+ },
+        
+       /* "Rajasthan": {
+          "Jaipur": {
+            name: "Jaipur",
+            country: "India",
+            category: "Culture",
+            image: "https://placehold.co/600x400/png?text=Jaipur+City+View",
+            whyLoveIt: [
+              "Historic forts and palaces",
+              "Rich Rajasthani culture and arts",
+              "Vibrant markets and festivals"
+            ],
+            culturalSites: [
+              {
+                name: "Amber Fort",
+                image: "https://placehold.co/600x400/png?text=Amber+Fort",
+                description: "A majestic fort with stunning architecture and panoramic views.",
+                location: "Amber, Jaipur"
+              },
+              {
+                name: "Hawa Mahal",
+                image: "https://placehold.co/600x400/png?text=Hawa+Mahal",
+                description: "The iconic pink palace known for its unique facade.",
+                location: "Jaipur City"
+              }
+            ]   //finished culturalsites
+          }
+        } // finished rajasthan */
+      }
+     /* "USA": {
+        "California": {
+          "San Francisco": {
+            name: "San Francisco",
+            country: "USA",
+            category: "Photography",
+            image: "https://placehold.co/600x400/png?text=San+Francisco+City+View",
+            whyLoveIt: [
+              "Golden Gate Bridge views",
+              "Diverse neighborhoods",
+              "Scenic waterfronts"
+            ],
+            photoSpots: [
+              {
+                name: "Golden Gate Bridge",
+                image: "https://placehold.co/600x400/png?text=Golden+Gate+Bridge",
+                description: "Iconic red suspension bridge with stunning views.",
+                location: "San Francisco"
+              },
+              {
+                name: "Alamo Square",
+                image: "https://placehold.co/600x400/png?text=Alamo+Square",
+                description: "Famous for the Painted Ladies Victorian houses.",
+                location: "San Francisco"
+              }
+            ]
+          }
+        },
+        "Hawaii": {
+          "Maui": {
+            name: "Maui",
+            country: "USA",
+            category: "Beaches",
+            image: "https://placehold.co/600x400/png?text=Maui+Beach",
+            whyLoveIt: [
+              "Pristine beaches",
+              "Lush tropical landscapes",
+              "Water sports and snorkeling"
+            ],
+          }
+        }
+      } */
+    };
+
+    // State
+    let selectedInterests = new Set(['food']);
+    let selectedCountry = '';
+    let selectedState = '';
+    let selectedCity = '';
+    let selectedFoodItem = '';
+
+    // Update selected interests tag text
+    function updateSelectedInterestsTag() {
+      if (selectedInterests.size === 0) {
+        selectedInterestsTag.textContent = 'None';
+      } else {
+        selectedInterestsTag.textContent = Array.from(selectedInterests).map(i => i.charAt(0).toUpperCase() + i.slice(1)).join(', ');
+      }
+    }
+
+    // Populate country dropdown
+    function populateCountries() {
+      countrySelect.innerHTML = '<option value="">Select a country</option>';
+      Object.keys(travelData).forEach(country => {
+        const option = document.createElement('option');
+        option.value = country;
+        option.textContent = country;
+        countrySelect.appendChild(option);
+      });
+    }
+
+    // Populate states dropdown based on selected country
+    function populateStates(country) {
+      stateSelect.innerHTML = '<option value="">Select a state</option>';
+      citySelect.innerHTML = '<option value="">Select a city</option>';
+      citySelect.disabled = true;
+      foodItemSelect.innerHTML = '<option value="">Select a food item</option>';
+      foodItemSelect.disabled = true;
+
+      if (country && travelData[country]) {
+        Object.keys(travelData[country]).forEach(state => {
+          const option = document.createElement('option');
+          option.value = state;
+          option.textContent = state;
+          stateSelect.appendChild(option);
+        });
+        stateSelect.disabled = false;
+      } else {
+        stateSelect.disabled = true;
+      }
+    }
+
+    // Populate cities dropdown based on selected state
+    function populateCities(country, state) {
+      citySelect.innerHTML = '<option value="">Select a city</option>';
+      citySelect.disabled = true;
+      foodItemSelect.innerHTML = '<option value="">Select a food item</option>';
+      foodItemSelect.disabled = true;
+
+      if (country && state && travelData[country] && travelData[country][state]) {
+        Object.keys(travelData[country][state]).forEach(city => {
+          const option = document.createElement('option');
+          option.value = city;
+          option.textContent = city;
+          citySelect.appendChild(option);
+        });
+        citySelect.disabled = false;
+      } else {
+        citySelect.disabled = true;
+      }
+    }
+
+    // Populate food items dropdown based on selected city and interest
+    function populateFoodItems(country, state, city) {
+      foodItemSelect.innerHTML = '<option value="">Select a food item</option>';
+      foodItemSelect.disabled = true;
+      selectedFoodItem = '';
+
+      if (country && state && city && travelData[country] && travelData[country][state] && travelData[country][state][city]) {
+        const dest = travelData[country][state][city];
+        if (selectedInterests.has('food') && dest.category.toLowerCase() === 'food' && dest.foodItems) {
+          const foodItems = dest.foodItems;
+          if (foodItems.length > 0) {
+            foodItems.forEach(food => {
+              const option = document.createElement('option');
+              option.value = food.name;
+              option.textContent = food.name;
+              foodItemSelect.appendChild(option);
+            });
+            foodItemSelect.disabled = false;
+          }
+        } else {
+          foodItemSelect.innerHTML = '<option value="">N/A for selected interest</option>';
+          foodItemSelect.disabled = true;
+        }
+      }
+    }
+
+    // Event listeners for location selects
+    countrySelect.addEventListener('change', () => {
+      selectedCountry = countrySelect.value;
+      selectedState = '';
+      selectedCity = '';
+      selectedFoodItem = '';
+      populateStates(selectedCountry);
+      citySelect.innerHTML = '<option value="">Select a city</option>';
+      citySelect.disabled = true;
+      foodItemSelect.innerHTML = '<option value="">Select a food item</option>';
+      foodItemSelect.disabled = true;
+    });
+
+    stateSelect.addEventListener('change', () => {
+      selectedState = stateSelect.value;
+      selectedCity = '';
+      selectedFoodItem = '';
+      populateCities(selectedCountry, selectedState);
+      foodItemSelect.innerHTML = '<option value="">Select a food item</option>';
+      foodItemSelect.disabled = true;
+    });
+
+    citySelect.addEventListener('change', () => {
+      selectedCity = citySelect.value;
+      selectedFoodItem = '';
+      populateFoodItems(selectedCountry, selectedState, selectedCity);
+    });
+
+    foodItemSelect.addEventListener('change', () => {
+      selectedFoodItem = foodItemSelect.value;
+    });
+
+    // Render results dynamically based on selected location, interests, and food item
+    function renderResults() {
+      resultsContainer.innerHTML = ''; // Clear previous results
+       resultsMessage.textContent = ''; // Clear previous message
+
+      if (
+        travelData[selectedCountry] &&
+        travelData[selectedCountry][selectedState] &&
+        travelData[selectedCountry][selectedState][selectedCity]
+      ) {
+        const dest = travelData[selectedCountry][selectedState][selectedCity];
+
+        // If no interests selected, show message
+        if (selectedInterests.size === 0) {
+            resultsMessage.textContent = '';
+          resultsContainer.innerHTML = `<p class="text-center text-gray-500">No interests selected.</p>`;
+          return;
+        }
+
+        // Show message with selected interests
+    const interestsList = Array.from(selectedInterests)
+      .map(i => i.charAt(0).toUpperCase() + i.slice(1))
+      .join(', ');
+    resultsMessage.textContent = `Your interested results for: ${interestsList}`;
+
+        // Prepare a flag to check if any results shown
+        let resultsShown = false;
+
+        // Show food results only if food interest is selected
+        if (selectedInterests.has('food') && dest.category.toLowerCase() === 'food' && dest.foodItems) {
+          // Filter food items by selectedFoodItem if any
+          let filteredFoodItems = dest.foodItems;
+          if (selectedFoodItem) {
+            filteredFoodItems = dest.foodItems.filter(f => f.name === selectedFoodItem);
+          }
+
+          if (filteredFoodItems.length > 0) {
+            filteredFoodItems.forEach(food => {
+              if (food.variants && food.variants.length > 0) {
+                food.variants.forEach(variant => {
+                  const variantCard = document.createElement('div');
+                  variantCard.className = 'border border-gray-200 rounded-xl overflow-hidden flex flex-col';
+
+                  variantCard.innerHTML = `
+                    <img alt="Image of ${variant.name}" class="w-full h-48 object-cover" src="${variant.image}" />
+                    <div class="p-6 flex flex-col flex-grow">
+                      <div>
+                        <p class="font-semibold text-black">${food.name} - ${variant.name}</p>
+                        <p class="text-gray-500">Area: ${variant.area}</p>
+                      </div>
+                      <div class="mt-4 text-gray-600 flex-grow">
+                        <p>${food.description}</p>
+                      </div>
+                    </div>
+                  `;
+                  resultsContainer.appendChild(variantCard);
+                  resultsShown = true;
+                });
+              } else {
+                const foodCard = document.createElement('div');
+                foodCard.className = 'border border-gray-200 rounded-xl overflow-hidden flex flex-col';
+
+                foodCard.innerHTML = `
+                  <img alt="Image of ${food.name}" class="w-full h-48 object-cover" src="${food.image}" />
+                  <div class="p-6 flex flex-col flex-grow">
+                    <div>
+                      <p class="font-semibold text-black">${food.name}</p>
+                      <p class="text-gray-500">Area: Multiple</p>
+                    </div>
+                    <div class="mt-4 text-gray-600 flex-grow">
+                      <p>${food.description}</p>
+                    </div>
+                  </div>
+                `;
+                resultsContainer.appendChild(foodCard);
+                resultsShown = true;
+              }
+            });
+          }
+        }
+
+// Inside renderResults(), after handling food:
+
+// Show cultural sites if selected
+if (selectedInterests.has('culture') && dest.culturalSites) {
+  dest.culturalSites.forEach(site => {
+    const siteCard = document.createElement('div');
+    siteCard.className = 'border border-gray-200 rounded-xl overflow-hidden flex flex-col';
+
+    siteCard.innerHTML = `
+      <img alt="Image of ${site.name}" class="w-full h-48 object-cover" src="${site.image}" />
+      <div class="p-6 flex flex-col flex-grow">
+        <div>
+          <p class="font-semibold text-black">${site.name}</p>
+          <p class="text-gray-500">Location: ${site.location}</p>
+        </div>
+        <div class="mt-4 text-gray-600 flex-grow">
+          <p>${site.description}</p>
+        </div>
+      </div>
+    `;
+    resultsContainer.appendChild(siteCard);
+    resultsShown = true;
+  });
+}
+
+// Show adventure if selected
+if (selectedInterests.has('adventure') && dest.adventure) {
+  dest.adventure.forEach(activity => {
+    const adventureCard = document.createElement('div');
+    adventureCard.className = 'border border-gray-200 rounded-xl overflow-hidden flex flex-col';
+
+    adventureCard.innerHTML = `
+      <img alt="Image of ${activity.name}" class="w-full h-48 object-cover" src="${activity.image}" />
+      <div class="p-6 flex flex-col flex-grow">
+        <div>
+          <p class="font-semibold text-black">${activity.name}</p>
+          <p class="text-gray-500">Location: ${activity.location}</p>
+        </div>
+        <div class="mt-4 text-gray-600 flex-grow">
+          <p>${activity.description}</p>
+        </div>
+      </div>
+    `;
+    resultsContainer.appendChild(adventureCard);
+    resultsShown = true;
+  });
+}
+
+// Show beaches if selected
+if (selectedInterests.has('beaches') && dest.beaches) {
+  dest.beaches.forEach(activity => {
+    const beachesCard = document.createElement('div');
+    beachesCard.className = 'border border-gray-200 rounded-xl overflow-hidden flex flex-col';
+
+    beachesCard.innerHTML = `
+      <img alt="Image of ${activity.name}" class="w-full h-48 object-cover" src="${activity.image}" />
+      <div class="p-6 flex flex-col flex-grow">
+        <div>
+          <p class="font-semibold text-black">${activity.name}</p>
+          <p class="text-gray-500">Location: ${activity.location}</p>
+        </div>
+        <div class="mt-4 text-gray-600 flex-grow">
+          <p>${activity.description}</p>
+        </div>
+      </div>
+    `;
+    resultsContainer.appendChild(beachesCard);
+    resultsShown = true;
+  });
+}
+
+// Show nature if selected
+if (selectedInterests.has('nature') && dest.nature) {
+  dest.nature.forEach(activity => {
+    const natureCard = document.createElement('div');
+    natureCard.className = 'border border-gray-200 rounded-xl overflow-hidden flex flex-col';
+
+    natureCard.innerHTML = `
+      <img alt="Image of ${activity.name}" class="w-full h-48 object-cover" src="${activity.image}" />
+      <div class="p-6 flex flex-col flex-grow">
+        <div>
+          <p class="font-semibold text-black">${activity.name}</p>
+          <p class="text-gray-500">Location: ${activity.location}</p>
+        </div>
+        <div class="mt-4 text-gray-600 flex-grow">
+          <p>${activity.description}</p>
+        </div>
+      </div>
+    `;
+    resultsContainer.appendChild(natureCard);
+    resultsShown = true;
+  });
+}
+
+// Show nightlife if selected
+if (selectedInterests.has('nightlife') && dest.nightlife) {
+  dest.nightlife.forEach(activity => {
+    const nightlifeCard = document.createElement('div');
+    nightlifeCard.className = 'border border-gray-200 rounded-xl overflow-hidden flex flex-col';
+
+    nightlifeCard.innerHTML = `
+      <img alt="Image of ${activity.name}" class="w-full h-48 object-cover" src="${activity.image}" />
+      <div class="p-6 flex flex-col flex-grow">
+        <div>
+          <p class="font-semibold text-black">${activity.name}</p>
+          <p class="text-gray-500">Location: ${activity.location}</p>
+        </div>
+        <div class="mt-4 text-gray-600 flex-grow">
+          <p>${activity.description}</p>
+        </div>
+      </div>
+    `;
+    resultsContainer.appendChild(nightlifeCard);
+    resultsShown = true;
+  });
+}
+
+// Show relaxation if selected
+if (selectedInterests.has('relaxation') && dest.relaxation) {
+  dest.relaxation.forEach(activity => {
+    const relaxationCard = document.createElement('div');
+    relaxationCard.className = 'border border-gray-200 rounded-xl overflow-hidden flex flex-col';
+
+   relaxationCard.innerHTML = `
+      <img alt="Image of ${activity.name}" class="w-full h-48 object-cover" src="${activity.image}" />
+      <div class="p-6 flex flex-col flex-grow">
+        <div>
+          <p class="font-semibold text-black">${activity.name}</p>
+          <p class="text-gray-500">Location: ${activity.location}</p>
+        </div>
+        <div class="mt-4 text-gray-600 flex-grow">
+          <p>${activity.description}</p>
+        </div>
+      </div>
+    `;
+    resultsContainer.appendChild(relaxationCard);
+    resultsShown = true;
+  });
+}
+
+// Show photography if selected
+if (selectedInterests.has('photography') && dest.photography) {
+  dest.photography.forEach(activity => {
+    const photographyCard = document.createElement('div');
+    photographyCard.className = 'border border-gray-200 rounded-xl overflow-hidden flex flex-col';
+
+    photographyCard.innerHTML = `
+      <img alt="Image of ${activity.name}" class="w-full h-48 object-cover" src="${activity.image}" />
+      <div class="p-6 flex flex-col flex-grow">
+        <div>
+          <p class="font-semibold text-black">${activity.name}</p>
+          <p class="text-gray-500">Location: ${activity.location}</p>
+        </div>
+        <div class="mt-4 text-gray-600 flex-grow">
+          <p>${activity.description}</p>
+        </div>
+      </div>
+    `;
+    resultsContainer.appendChild(photographyCard);
+    resultsShown = true;
+  });
+}
+
+// Show shopping if selected
+if (selectedInterests.has('shopping') && dest.shopping) {
+  dest.shopping.forEach(activity => {
+    const shoppingCard = document.createElement('div');
+    shoppingCard.className = 'border border-gray-200 rounded-xl overflow-hidden flex flex-col';
+
+   shoppingCard.innerHTML = `
+      <img alt="Image of ${activity.name}" class="w-full h-48 object-cover" src="${activity.image}" />
+      <div class="p-6 flex flex-col flex-grow">
+        <div>
+          <p class="font-semibold text-black">${activity.name}</p>
+          <p class="text-gray-500">Location: ${activity.location}</p>
+        </div>
+        <div class="mt-4 text-gray-600 flex-grow">
+          <p>${activity.description}</p>
+        </div>
+      </div>
+    `;
+    resultsContainer.appendChild(shoppingCard);
+    resultsShown = true;
+  });
+}
+
+// Show architechure if selected
+if (selectedInterests.has('architecture') && dest.architecture) {
+  dest.architecture.forEach(activity => {
+    const architectureCard = document.createElement('div');
+    architectureCard.className = 'border border-gray-200 rounded-xl overflow-hidden flex flex-col';
+
+   architectureCard.innerHTML = `
+      <img alt="Image of ${activity.name}" class="w-full h-48 object-cover" src="${activity.image}" />
+      <div class="p-6 flex flex-col flex-grow">
+        <div>
+          <p class="font-semibold text-black">${activity.name}</p>
+          <p class="text-gray-500">Location: ${activity.location}</p>
+        </div>
+        <div class="mt-4 text-gray-600 flex-grow">
+          <p>${activity.description}</p>
+        </div>
+      </div>
+    `;
+    resultsContainer.appendChild(architectureCard);
+    resultsShown = true;
+  });
+}
+
+
+        // Show other interests results (culture, photography, beaches, etc.) if selected and matching category
+     /*   const otherInterests = Array.from(selectedInterests).filter(i => i !== 'food');
+
+        otherInterests.forEach(interest => {
+          if (interest === 'culture' && dest.category.toLowerCase() === 'culture' && dest.culturalSites) {
+            dest.culturalSites.forEach(site => {
+              const siteCard = document.createElement('div');
+              siteCard.className = 'border border-gray-200 rounded-xl overflow-hidden flex flex-col';
+
+              siteCard.innerHTML = `
+                <img alt="Image of ${site.name}" class="w-full h-48 object-cover" src="${site.image}" />
+                <div class="p-6 flex flex-col flex-grow">
+                  <div>
+                    <p class="font-semibold text-black">${site.name}</p>
+                    <p class="text-gray-500">Location: ${site.location}</p>
+                  </div>
+                  <div class="mt-4 text-gray-600 flex-grow">
+                    <p>${site.description}</p>
+                  </div>
+                </div>
+              `;
+              resultsContainer.appendChild(siteCard);
+              resultsShown = true;
+            });
+          } else if (interest === 'photography' && dest.category.toLowerCase() === 'photography' && dest.photoSpots) {
+            dest.photoSpots.forEach(spot => {
+              const spotCard = document.createElement('div');
+              spotCard.className = 'border border-gray-200 rounded-xl overflow-hidden flex flex-col';
+
+              spotCard.innerHTML = `
+                <img alt="Image of ${spot.name}" class="w-full h-48 object-cover" src="${spot.image}" />
+                <div class="p-6 flex flex-col flex-grow">
+                  <div>
+                    <p class="font-semibold text-black">${spot.name}</p>
+                    <p class="text-gray-500">Location: ${spot.location}</p>
+                  </div>
+                  <div class="mt-4 text-gray-600 flex-grow">
+                    <p>${spot.description}</p>
+                  </div>
+                </div>
+              `;
+              resultsContainer.appendChild(spotCard);
+              resultsShown = true;
+            });
+          } else if (interest === 'beaches' && dest.category.toLowerCase() === 'beaches' && dest.beaches) {
+            dest.beaches.forEach(beach => {
+              const beachCard = document.createElement('div');
+              beachCard.className = 'border border-gray-200 rounded-xl overflow-hidden flex flex-col';
+
+              beachCard.innerHTML = `
+                <img alt="Image of ${beach.name}" class="w-full h-48 object-cover" src="${beach.image}" />
+                <div class="p-6 flex flex-col flex-grow">
+                  <div>
+                    <p class="font-semibold text-black">${beach.name}</p>
+                    <p class="text-gray-500">Location: ${beach.location}</p>
+                  </div>
+                  <div class="mt-4 text-gray-600 flex-grow">
+                    <p>${beach.description}</p>
+                  </div>
+                </div>
+              `;
+              resultsContainer.appendChild(beachCard);
+              resultsShown = true;
+            });
+          } else if (interest === 'adventure') {
+            // Example adventure result (static for demo)
+            const adventureCard = document.createElement('div');
+            adventureCard.className = 'border border-gray-200 rounded-xl overflow-hidden flex flex-col';
+
+            adventureCard.innerHTML = `
+              <img alt="Mountain landscape with hikers" class="w-full h-48 object-cover" src="https://placehold.co/600x400/png?text=Adventure+Hiking" />
+              <div class="p-6 flex flex-col flex-grow">
+                <div>
+                  <p class="font-semibold text-black">Mountain Hiking</p>
+                  <p class="text-gray-500">Location: Various mountain trails</p>
+                </div>
+                <div class="mt-4 text-gray-600 flex-grow">
+                  <p>Experience thrilling hikes with breathtaking views and fresh mountain air.</p>
+                </div>
+              </div>
+            `;
+            resultsContainer.appendChild(adventureCard);
+            resultsShown = true;
+          } else if (interest === 'nature') {
+            // Example nature result (static for demo)
+            const natureCard = document.createElement('div');
+            natureCard.className = 'border border-gray-200 rounded-xl overflow-hidden flex flex-col';
+
+            natureCard.innerHTML = `
+              <img alt="Forest with wildlife" class="w-full h-48 object-cover" src="https://placehold.co/600x400/png?text=Nature+Wildlife" />
+              <div class="p-6 flex flex-col flex-grow">
+                <div>
+                  <p class="font-semibold text-black">Wildlife Safari</p>
+                  <p class="text-gray-500">Location: National parks and reserves</p>
+                </div>
+                <div class="mt-4 text-gray-600 flex-grow">
+                  <p>Explore diverse flora and fauna in their natural habitats on guided safaris.</p>
+                </div>
+              </div>
+            `;
+            resultsContainer.appendChild(natureCard);
+            resultsShown = true;
+          }
+          // Add more interests with static example results if needed
+        }); */
+
+        if (!resultsShown) {
+          resultsContainer.innerHTML = `<p class="text-center text-gray-500">No results match your selected interests and location.</p>`;
+        }
+
+      } else {
+        resultsContainer.innerHTML = `<p class="text-center text-gray-500">No results found for the selected location.</p>`;
+      }
+    }
+
+    // Step 1 to Step 2
+    toStep2Btn.addEventListener('click', () => {
+      const checkedInterests = Array.from(interestsForm.querySelectorAll('input[type="checkbox"]:checked')).map(i => i.id);
+      if (checkedInterests.length === 0) {
+        interestError.classList.remove('hidden');
+        return;
+      }
+      interestError.classList.add('hidden');
+      selectedInterests = new Set(checkedInterests);
+      updateSelectedInterestsTag();
+
+      step1.classList.add('hidden');
+      step2.classList.remove('hidden');
+      startOverStep1Btn.classList.add('hidden');
+      startOverStep2Btn.classList.remove('hidden');
+    });
+
+    // Step 2 to Step 3
+    toStep3Btn.addEventListener('click', () => {
+      if (!selectedCountry) {
+        alert('Please select a country to continue.');
+        return;
+      }
+      if (!selectedState) {
+        alert('Please select a state to continue.');
+        return;
+      }
+      if (!selectedCity) {
+        alert('Please select a city to continue.');
+        return;
+      }
+
+      renderResults();
+
+      step2.classList.add('hidden');
+      step3.classList.remove('hidden');
+      startOverStep2Btn.classList.add('hidden');
+      startOverStep3Btn.classList.remove('hidden');
+    });
+
+    // Back to Step 2 from Step 3
+    backToStep2Btn.addEventListener('click', () => {
+      step3.classList.add('hidden');
+      step2.classList.remove('hidden');
+      startOverStep3Btn.classList.add('hidden');
+      startOverStep2Btn.classList.remove('hidden');
+    });
+
+    // Back to Step 1 from Step 2
+    backToStep1Btn.addEventListener('click', () => {
+      step2.classList.add('hidden');
+      step1.classList.remove('hidden');
+      startOverStep2Btn.classList.add('hidden');
+      startOverStep1Btn.classList.remove('hidden');
+    });
+
+    // Start Over buttons reset everything and go to step 1
+    function resetAll() {
+      interestsForm.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+      interestsForm.querySelector('#food').checked = true;
+      selectedInterests = new Set(['food']);
+      updateSelectedInterestsTag();
+
+      countrySelect.value = '';
+      stateSelect.innerHTML = '<option value="">Select a state</option>';
+      stateSelect.disabled = true;
+      citySelect.innerHTML = '<option value="">Select a city</option>';
+      citySelect.disabled = true;
+      foodItemSelect.innerHTML = '<option value="">Select a food item</option>';
+      foodItemSelect.disabled = true;
+
+      selectedCountry = '';
+      selectedState = '';
+      selectedCity = '';
+      selectedFoodItem = '';
+
+      resultsContainer.innerHTML = '';
+
+      step1.classList.remove('hidden');
+      step2.classList.add('hidden');
+      step3.classList.add('hidden');
+
+      startOverStep1Btn.classList.add('hidden');
+      startOverStep2Btn.classList.add('hidden');
+      startOverStep3Btn.classList.add('hidden');
+    }
+
+    startOverStep1Btn.addEventListener('click', resetAll);
+    startOverStep2Btn.addEventListener('click', resetAll);
+    startOverStep3Btn.addEventListener('click', resetAll);
+
+    // Initialize on page load
+    updateSelectedInterestsTag();
+    populateCountries();
+
+    toStep2Btn.addEventListener('click', () => {
+      startOverStep1Btn.classList.remove('hidden');
+    });
+  </script>
+ </body>
+</html>
